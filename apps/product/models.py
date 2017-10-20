@@ -54,5 +54,6 @@ class Goods(models.Model):
         verbose_name = '产品'
         verbose_name_plural = verbose_name
 
+
     def __str__(self):
         return self.name

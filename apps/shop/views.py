@@ -32,9 +32,9 @@ class ListView(View):
         goods_list = Goods.objects.all().filter(is_abort=False)
         category_label = '全部商品'
         if category_id:
-            # goods_list = goods_list.filter(category_id == category_id)
+            goods_list = goods_list.filter(category__id = category_id)
             category = Category.objects.get(pk=category_id)
-            if not category:
+            if category:
                 category_label = category.name + '的商品'
 
         return render(request, 'goods-list.html', {
